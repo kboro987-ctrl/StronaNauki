@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inżynieria finansowa — nauka, kompendium i testy</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">IF</div>
+      <div>Inżynieria finansowa<small>kompendium · wzory · testy</small></div>
+    </div>
+    <nav class="mainnav">
+      <button data-view="home" class="active">Start</button>
+      <button data-view="kompendium">Kompendium</button>
+      <button data-view="wzory">Wzory</button>
+      <button data-view="testy">Testy</button>
+    </nav>
+    <button class="theme-btn" id="themeBtn" title="Zmień motyw">☀️</button>
+  </header>
+
+  <main>
+    <!-- ===================== START ===================== -->
+    <section class="view active" id="view-home">
+      <div class="hero">
+        <h1>Naucz się inżynierii finansowej</h1>
+        <p>Kompletne kompendium wiedzy na podstawie 12 wykładów: rynki finansowe, ryzyko, kontrakty
+        forward, FRA, futures, swap, opcje, ich wycena (model dwumianowy i Black–Scholes) oraz strategie opcyjne.
+        Sprawdź się w testach z natychmiastowym wyjaśnieniem każdej odpowiedzi.</p>
+        <div class="meta">Materiał: prof. dr hab. Joanna Olbryś (Wydział Informatyki, Politechnika Białostocka) ·
+        zadania inspirowane książką „Podstawy inwestowania w kontrakty terminowe i opcje”.</div>
+      </div>
+
+      <div class="cards">
+        <div class="card" data-goto="kompendium">
+          <div class="ic">📖</div>
+          <h3>Kompendium</h3>
+          <p>11 uporządkowanych działów z definicjami, wzorami, tabelami i rozwiązanymi przykładami.</p>
+        </div>
+        <div class="card" data-goto="wzory">
+          <div class="ic">📐</div>
+          <h3>Ściąga wzorów</h3>
+          <p>Najważniejsze wzory w jednym miejscu — parytet stóp, FRA, futures, greckie, Black–Scholes.</p>
+        </div>
+        <div class="card" data-goto="testy">
+          <div class="ic">📝</div>
+          <h3>Testy wiedzy</h3>
+          <p>8 działów tematycznych + egzamin próbny. Punktacja, najlepsze wyniki i przegląd odpowiedzi.</p>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top:26px">
+        <b>Jak się uczyć?</b> Przejdź kolejno działy w <span class="kbd">Kompendium</span>, potem rozwiąż test
+        z danego tematu w zakładce <span class="kbd">Testy</span>. Na koniec zmierz się z <b>egzaminem próbnym</b>.
+        Twoje najlepsze wyniki zapisują się w przeglądarce.
+      </div>
+    </section>
+
+    <!-- ===================== KOMPENDIUM ===================== -->
+    <section class="view" id="view-kompendium">
+      <div class="layout">
+        <aside class="sidebar" id="compSidebar"></aside>
+        <div id="compBody"></div>
+      </div>
+    </section>
+
+    <!-- ===================== WZORY ===================== -->
+    <section class="view" id="view-wzory">
+      <div class="hero" style="padding:24px">
+        <h1 style="font-size:1.5rem;margin:0">Ściąga wzorów</h1>
+        <p>Kliknij <span class="kbd">Kompendium</span>, aby poznać kontekst i wyprowadzenia.</p>
+      </div>
+      <div class="cards" id="wzoryGrid"></div>
+    </section>
+
+    <!-- ===================== TESTY ===================== -->
+    <section class="view" id="view-testy">
+      <div class="quiz-intro">
+        <div class="hero" style="padding:24px">
+          <h1 style="font-size:1.5rem;margin:0 0 6px">Testy wiedzy</h1>
+          <p>Wybierz dział, aby rozpocząć. Pytania i odpowiedzi są losowo mieszane przy każdym podejściu.</p>
+        </div>
+        <div class="quiz-grid" id="quizGrid"></div>
+      </div>
+    </section>
+
+    <!-- ===================== RUNNER (quiz) ===================== -->
+    <section class="view" id="view-runner"></section>
+  </main>
+
+  <footer class="foot">
+    Materiał edukacyjny do nauki własnej · Inżynieria finansowa · zbudowano na podstawie wykładów 1–12.
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
