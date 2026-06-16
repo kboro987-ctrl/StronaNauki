@@ -82,11 +82,13 @@ function buildQuizMenu() {
     const card = document.createElement("div");
     card.className = "quiz-card";
     const b = best[key];
+    if (qz.book) card.style.borderColor = "var(--warn)";
     card.innerHTML = `
       <span class="count">${qz.questions.length} pyt.</span>
       <div class="ic" style="font-size:1.7rem">${qz.icon}</div>
       <h3>${qz.title}</h3>
       <p>${qz.desc}</p>
+      ${qz.book ? `<div class="best" style="color:var(--warn)">📕 Oryginalne pytania z książki GPW</div>` : ""}
       ${b != null ? `<div class="best">🏆 Najlepszy wynik: ${b}%</div>` : ""}`;
     card.onclick = () => startQuiz(key);
     grid.appendChild(card);
